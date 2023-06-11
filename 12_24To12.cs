@@ -22,10 +22,11 @@
                  char.IsDigit(arg[1]) &&
                  arg[2] == ':' &&
                  char.IsDigit(arg[3]) &&
-                 arg[3] <= '5' &&
-                 char.IsDigit(arg[4])) ||
-                (arg[0] >= '2' && 
-                 arg[1] >= '4'))
+                 arg[3] <= '5' && 
+                 char.IsDigit(arg[4])) && 
+                 arg.Length == 5 ||
+                 (arg[0] >= '2' && 
+                 arg[1] >= '4') )
             {
                 return true;
             }

@@ -24,6 +24,7 @@
                  char.IsDigit(arg[3]) &&
                  arg[3] <= '5' &&
                  char.IsDigit(arg[4]) &&
+                 arg.Length == 7 &&
                  (arg[5].ToString().ToUpper() == "P" || arg[5].ToString().ToUpper() == "A") &&
                  arg[6].ToString().ToUpper() == "M")
             {
@@ -66,7 +67,7 @@
             {
                 return $"12:{minutesWithoutAmOrPm}";
             }
-            return $"{(Int32.Parse(hour) - 12).ToString()}:{minutesWithoutAmOrPm}";
+            return $"{(Int32.Parse(hour) + 12).ToString()}:{minutesWithoutAmOrPm}";
         }
     }
 

@@ -1,4 +1,4 @@
-﻿internal partial class Program
+﻿class Program
 {
      private static bool CheckIfOneArgsExists(string[] args)
     {

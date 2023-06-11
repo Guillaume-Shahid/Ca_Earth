@@ -1,4 +1,4 @@
-﻿public static class Program
+﻿class Program
 {
     private static bool CheckIfThreeArgsExists(string[] args)
     {
@@ -9,14 +9,21 @@
         return true;
     }
 
-    private static bool CheckIfArgsAreNumber(string[] args)
+    private static bool CheckIfArgsArePositiveNumber(string[] args)
     {
         try
         {
             int arg1 = Int32.Parse(args[1]);
             int arg2 = Int32.Parse(args[2]);
             int arg3 = Int32.Parse(args[3]);
-            return true;
+            if (arg1 >= 0 && arg2 >= 0 && arg3 >= 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         catch
         {
@@ -58,7 +65,7 @@
     
     public static void Main(string[] args)
     {
-        if (CheckIfThreeArgsExists(args) && CheckIfArgsAreNumber(args))
+        if (CheckIfThreeArgsExists(args) && CheckIfArgsArePositiveNumber(args))
         {
             if (CheckIfAllNumberAreDifferent(args))
             {
@@ -71,7 +78,7 @@
         }
         else
         {
-            Console.WriteLine("Tu dois rentrer trois arguments et trois nombres entiers");
+            Console.WriteLine("Tu dois rentrer trois arguments et trois nombres entiers positifs");
         }
     }
 }

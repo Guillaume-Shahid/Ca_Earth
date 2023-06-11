@@ -33,7 +33,7 @@
             try
             {
                 double numberToSquareRoot = Double.Parse(args[1]);
-                if(numberToSquareRoot != 0)
+                if(numberToSquareRoot >= 0)
                 {
                     Console.WriteLine(SquareRoot(numberToSquareRoot));
                 }

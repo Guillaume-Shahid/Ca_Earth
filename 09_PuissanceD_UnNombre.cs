@@ -1,12 +1,12 @@
-﻿using System;
-class Program
+﻿class Program
 {
     private static bool CheckIfTwoArgsExists(string[] args)
     {
-        if(args.Length != 3)
+        if (args.Length != 3)
         {
-            return false;   
+            return false;
         }
+
         return true;
     }
 
@@ -14,26 +14,43 @@ class Program
     {
         int result = 1;
 
-        if(number2 != 0)
+        if (number2 != 0)
         {
-            for(int i = 0; i< number2; i++)
+            for (int i = 0; i < number2; i++)
             {
-                result *= number1;
+                if ((result * number1)/number1 == result)
+                {
+                    result *= number1;
+                }
+                else
+                {
+                    return -1;
+                }
             }
         }
+
         return result;
     }
 
     private static void Main(string[] args)
     {
-        if(CheckIfTwoArgsExists(args))
+        if (CheckIfTwoArgsExists(args))
         {
             try
             {
                 int number1 = Int32.Parse(args[1]);
                 int number2 = Int32.Parse(args[2]);
-                
-                Console.WriteLine(Number1PowNumber2(number1, number2));
+
+                int result = Number1PowNumber2(number1, number2);
+
+                if (result != -1)
+                {
+                    Console.WriteLine(result);
+                }
+                else
+                {
+                    Console.WriteLine("Ton nombre est trop grand pour moi...");
+                }
             }
             catch
             {

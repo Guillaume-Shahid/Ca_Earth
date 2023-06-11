@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-class Program
+﻿class Program
 {
      private static bool CheckIfOneArgsExists(string[] args)
     {
@@ -37,15 +36,21 @@ class Program
             {
                 int numberInArgs = Int32.Parse(args[1]);
 
-                if(IsNumberIsPrime(numberInArgs))
+                if (numberInArgs >= 0)
                 {
-                    Console.WriteLine($"Oui, {numberInArgs} est un nombre premier.");
+                    if(IsNumberIsPrime(numberInArgs))
+                    {
+                        Console.WriteLine($"Oui, {numberInArgs} est un nombre premier.");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Non, {numberInArgs} n'est pas premier.");
+                    }   
                 }
                 else
                 {
-                    Console.WriteLine($"Non, {numberInArgs} n'est pas premier.");
+                    Console.WriteLine("Erreur");
                 }
-
             }
             catch
             {

@@ -1,6 +1,6 @@
-﻿internal partial class Program
+﻿class Program
 {
-     private static bool CheckIfOnergsExists(string[] args)
+     private static bool CheckIfArgsExists(string[] args)
     {
         if(args.Length != 2)
         {
@@ -12,7 +12,7 @@
     {   
         string outputString = "";
 
-        if(CheckIfOnergsExists(args))
+        if(CheckIfArgsExists(args))
         {
             try
             {

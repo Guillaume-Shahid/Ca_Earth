@@ -1,5 +1,4 @@
-﻿using System;
-public static class Program
+﻿class Program
 {
     private static bool CheckIfOneArgsExists(string[] args)
     {
@@ -10,7 +9,7 @@ public static class Program
         return true; 
     }
 
-    private static bool CheckIfAllArgsAreNumber(string[] args)
+    private static bool CheckIfAllArgsArePositiveNumber(string[] args)
     {
         foreach (var number in args)
         {
@@ -22,8 +21,11 @@ public static class Program
             {
                 return false;
             }
+            if (Int32.Parse(number) < 0)
+            {
+                return false;
+            }
         }
-
         return true;
     }
 
@@ -48,7 +50,7 @@ public static class Program
     {
         if (CheckIfOneArgsExists(args))
         {
-            if (CheckIfAllArgsAreNumber(args))
+            if (CheckIfAllArgsArePositiveNumber(args))
             {
                 Console.WriteLine(isListSorted(args));
             }

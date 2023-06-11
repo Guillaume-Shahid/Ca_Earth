@@ -1,7 +1,6 @@
-﻿using System;
-internal partial class Program
+﻿class Program
 {
-    private static void DisplayLetters(string letterInArgs)
+    private static string DisplayLetters(string letterInArgs)
     {
         char firstArg = Char.Parse(letterInArgs);
 
@@ -9,13 +8,13 @@ internal partial class Program
         {
             if(letter >= firstArg)
             {
-                Console.Write(letter);
+                return letter;
             }
         }
-        Console.WriteLine("");
+        return "";
     }
 
-    private static bool CheckIfOneArgsExists(string[] args)
+    private static bool CheckIfArgsExists(string[] args)
     {
         if(args.Length != 2)
         {
@@ -36,7 +35,7 @@ internal partial class Program
     
     private static void Main(string[] args)
     {
-        if(CheckIfOneArgsExists(args) && CheckIfThereIsOnlyOneLetter(args) && args[1].All(char.IsLetter))
+        if(CheckIfArgsExists(args) && CheckIfThereIsOnlyOneLetter(args) && args[1].All(char.IsLetter))
         {
             DisplayLetters(args[1].ToLower());
         }
